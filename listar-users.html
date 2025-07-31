@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{ url_for('index') }}">Home</a></h2>
+<h2><a href="{{ url_for('create_user') }}">Add Users</a></h2>
+<h2><a href="{{ url_for('listar') }}">Listar Users</a></h2>
+{% endblock %}
+
+{% block conteudo %}
+    <h1>Lista de Usuários</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+                Nome: {{ user['nome'] }}
+                <a href="{{ url_for('delete_user', id=user['id']) }}">
+                    🗑️ Excluir
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

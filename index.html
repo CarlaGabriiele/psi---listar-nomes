@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{ url_for('index') }}">Home</a></h2>
+<h2><a href="{{ url_for('create_user') }}">Add Users</a></h2>
+<h2><a href="{{ url_for('listar') }}">Listar Users</a></h2>
+{% endblock %}
+
+{% block conteudo %}
+    <h1>Bem-vindo à Escola</h1>
+    <p>Use os links acima para navegar.</p>
+{% endblock %}
